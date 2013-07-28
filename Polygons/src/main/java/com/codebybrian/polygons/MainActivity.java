@@ -18,21 +18,21 @@ public class MainActivity extends Activity {
         Animation rotate = AnimationUtils.loadAnimation(this, R.anim.clockwise_rotate);
         rotate.setRepeatCount(Animation.INFINITE);
         rotate.setRepeatMode(Animation.RESTART);
-//        poly1.startAnimation(rotate);
+        poly1.startAnimation(rotate);
 
-//        View poly2 = findViewById(R.id.poly2);
-//        Animation rotate2 = AnimationUtils.loadAnimation(this, R.anim.counterclockwise_rotate);
-//        rotate2.setDuration(1000);
-//        rotate2.setRepeatCount(Animation.INFINITE);
-//        rotate2.setRepeatMode(Animation.RESTART);
-//        poly2.startAnimation(rotate2);
-//
-//        View poly4 = findViewById(R.id.poly4);
-//        Animation rotate4 = AnimationUtils.loadAnimation(this, R.anim.scale_up);
-//        rotate4.setDuration(1000);
-//        rotate4.setRepeatCount(Animation.INFINITE);
-//        rotate4.setRepeatMode(Animation.REVERSE);
-//        poly4.startAnimation(rotate4);
+        View poly2 = findViewById(R.id.poly2);
+        Animation rotate2 = AnimationUtils.loadAnimation(this, R.anim.counterclockwise_rotate);
+        rotate2.setDuration(1000);
+        rotate2.setRepeatCount(Animation.INFINITE);
+        rotate2.setRepeatMode(Animation.RESTART);
+        poly2.startAnimation(rotate2);
+
+        View poly4 = findViewById(R.id.poly4);
+        Animation rotate4 = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        rotate4.setDuration(1000);
+        rotate4.setRepeatCount(Animation.INFINITE);
+        rotate4.setRepeatMode(Animation.REVERSE);
+        poly4.startAnimation(rotate4);
 
 
     }
