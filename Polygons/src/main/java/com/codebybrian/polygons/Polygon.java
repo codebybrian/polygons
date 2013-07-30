@@ -20,7 +20,7 @@ public class Polygon extends View {
     private int fillColor = 0xffffffff;
     private float startAngle = -90;
     private boolean showInscribedCircle = false;
-    private float fillPercent = 100;
+    private float fillPercent = 1;
     private int fillBitmapResourceId = -1;
 
     private Paint fillPaint;
@@ -55,7 +55,7 @@ public class Polygon extends View {
         startAngle = polyAttributes.getFloat(R.styleable.Polygon_start_angle, startAngle);
         showInscribedCircle = polyAttributes.getBoolean(R.styleable.Polygon_inscribed_circle, showInscribedCircle);
         fillBitmapResourceId = polyAttributes.getResourceId(R.styleable.Polygon_fill_bitmap, fillBitmapResourceId);
-        float fillPct = polyAttributes.getFloat(R.styleable.Polygon_fill_percent, fillPercent);
+        float fillPct = polyAttributes.getFloat(R.styleable.Polygon_fill_percent, 100);
 
         polyAttributes.recycle();
 
@@ -91,7 +91,7 @@ public class Polygon extends View {
         }
 
         if (fillPercent < 0 || fillPercent > 100){
-            fillPercent = 100;
+            fillPercent = 1;
         }
     }
 
@@ -163,7 +163,7 @@ public class Polygon extends View {
 
         // The poly is created as a shape in a path.
         // If there is a hole in the poly, draw a 2nd shape inset from the first
-        for(int j = 0; j < ((fillPercent < 100) ? 2 : 1) ; j++){
+        for(int j = 0; j < ((fillPercent < 1) ? 2 : 1) ; j++){
             polyPath.moveTo(workingRadius,0);
             for (int i = 1; i < sides; i++) {
                 polyPath.lineTo((float)(workingRadius*Math.cos(a*i)),
